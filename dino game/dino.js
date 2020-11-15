@@ -1,5 +1,6 @@
 var character= document.getElementById('character');
 var block= document.getElementById('block');
+var counter=0;
 function jump() {
  character.classList.add("animate");
  setTimeout(function(){
@@ -10,10 +11,15 @@ var dead=setInterval(function (){
     var charTop= parseInt(window.getComputedStyle(character).getPropertyValue("top"));
     var blockLeft = parseInt(window.getComputedStyle(block).getPropertyValue("left"));
    
-    if(blockLeft<20 &&  blockLeft>0  && charTop>=130)
+    if(blockLeft<20 &&  blockLeft>-20  && charTop>=130)
    {
        block.style.animation="none";
-       block.style.display = "none";
-       alert("game over");
+       alert("game over || your score: "+Math.floor(counter/100));
+       counter=0;
+        block.style.animation = "block 1s infinite linear";
+    }
+    else {
+        counter++;
+        document.getElementById('score').innerHTML = Math.floor(counter / 100);
     }
 },10);
