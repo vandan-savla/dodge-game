@@ -36,7 +36,7 @@ p{
   position: relative;
   top: 130px;
   left: 500px;
-  animation: block 1s infinite linear;
+  animation: block 1.2s infinite linear;
 }
 
 @keyframes block {
