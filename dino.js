@@ -22,4 +22,4 @@ var dead=setInterval(function (){
         counter++;
         document.getElementById('score').innerHTML = Math.floor(counter / 100);
     }
-},10);
+},100);
